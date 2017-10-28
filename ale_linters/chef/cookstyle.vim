@@ -1,5 +1,6 @@
 " Author: ynonp - https://github.com/ynonp, Eddie Lebow https://github.com/elebow
-" Description: cookstyle, a code style analyzer for Ruby files
+" Description: cookstyle, a code style analyzer for chef cookbooks, based on
+" rubocopp
 
 function! ale_linters#chef#cookstyle#GetCommand(buffer) abort
     let l:executable = ale#handlers#cookstyle#GetExecutable(a:buffer)
