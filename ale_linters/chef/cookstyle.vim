@@ -10,7 +10,7 @@ function! ale_linters#chef#cookstyle#GetCommand(buffer) abort
 
     return ale#Escape(l:executable) . l:exec_args
     \   . ' --format json --force-exclusion '
-    \   . ale#Var(a:buffer, 'ruby_cookstyle_options')
+    \   . ale#Var(a:buffer, 'chef_cookstyle_options')
     \   . ' --stdin ' . ale#Escape(expand('#' . a:buffer . ':p'))
 endfunction
 
@@ -53,7 +53,7 @@ function! ale_linters#chef#cookstyle#GetType(severity) abort
     return 'E'
 endfunction
 
-call ale#linter#Define('ruby', {
+call ale#linter#Define('chef', {
 \   'name': 'cookstyle',
 \   'executable_callback': 'ale#handlers#cookstyle#GetExecutable',
 \   'command_callback': 'ale_linters#chef#cookstyle#GetCommand',
